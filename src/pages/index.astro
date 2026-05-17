@@ -1,10 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import AppCard from "../components/AppCard.astro";
 ---
 
 <Layout
-  title="barreeyentos"
-  description="// make things // do things"
-  pageTitle={`// make things\n// do things`}
-  preserveWhitespace={true}
-/>
+  title="barreeyentos — make things, do things"
+  description="Ashley Negrette: software engineer making things and shipping apps."
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">Ashley Negrette</p>
+      <h1 class="tagline">
+        <span class="tagline-line"><span class="slash">//</span> make things</span>
+        <span class="tagline-line"><span class="slash">//</span> do things</span>
+      </h1>
+      <p class="hero-sub">
+        A software engineer learning and playing with new technology. Currently
+        shipping small, useful apps from <a href="/apps">/apps</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <a href="/apps">All apps &rarr;</a>
+      </div>
+      <div class="apps-grid">
+        <AppCard
+          href="/apps/day-calculator"
+          title="Day Calculator"
+          meta="iOS · 2020"
+          description="Pick a date, add days, weeks, months, or years — get your answer."
+          glyph="D"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

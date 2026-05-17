@@ -1,24 +1,18 @@
 ---
-import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 import "../styles/global.css";
 
 interface Props {
   title: string;
   description?: string;
-  pageTitle?: string;
-  centerTitle?: boolean;
-  preserveWhitespace?: boolean;
 }
 
 const {
   title,
-  description = "barreeyentos — make things, do things.",
-  pageTitle,
-  centerTitle = false,
-  preserveWhitespace = false,
+  description = "Ashley Negrette — make things, do things.",
 } = Astro.props;
-
-const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -27,20 +21,21 @@ const year = new Date().getFullYear();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
-    <Header
-      title={pageTitle}
-      centerTitle={centerTitle}
-      preserveWhitespace={preserveWhitespace}
-    />
+    <Nav />
     <main>
       <slot />
     </main>
-    <footer class="site-footer">
-      &copy; {year} Ashley Negrette
-    </footer>
+    <Footer />
   </body>
 </html>

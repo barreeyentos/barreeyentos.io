@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import AppCard from "../../components/AppCard.astro";
+---
+
+<Layout
+  title="Apps — barreeyentos"
+  description="Apps by Ashley Negrette."
+>
+  <header class="container page-head">
+    <span class="eyebrow">// apps</span>
+    <h1>Things I've shipped.</h1>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="apps-grid">
+        <AppCard
+          href="/apps/day-calculator"
+          title="Day Calculator"
+          meta="iOS · 2020"
+          description="Pick a date, add days, weeks, months, or years — get your answer."
+          glyph="D"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

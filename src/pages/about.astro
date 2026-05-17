@@ -5,8 +5,20 @@ import Layout from "../layouts/Layout.astro";
 <Layout
   title="About — barreeyentos"
   description="About Ashley Negrette."
-  pageTitle="About"
-  centerTitle={true}
 >
-  <p>Just a software engineer learning and playing with new technology.</p>
+  <header class="container page-head">
+    <span class="eyebrow">// about</span>
+    <h1>Hi, I'm Ashley.</h1>
+  </header>
+
+  <div class="prose">
+    <p>
+      Just a software engineer learning and playing with new technology.
+    </p>
+    <p>
+      This site collects the little apps and experiments I publish along the
+      way. Say hi at
+      <a href="mailto:apps@barreeyentos.io">apps@barreeyentos.io</a>.
+    </p>
+  </div>
 </Layout>
