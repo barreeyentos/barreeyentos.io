@@ -1,0 +1,39 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/apps", label: "Apps" },
+];
+
+const isCurrent = (href: string) =>
+  href === "/" ? path === "/" : path === href || path.startsWith(href + "/");
+---
+
+<header class="nav" id="site-nav">
+  <div class="container nav-inner">
+    <a href="/" class="brand">barreeyentos</a>
+    <nav class="nav-links" aria-label="Primary">
+      {
+        links
+          .filter((l) => l.href !== "/")
+          .map((l) => (
+            <a href={l.href} aria-current={isCurrent(l.href) ? "page" : undefined}>
+              {l.label}
+            </a>
+          ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  if (nav) {
+    const onScroll = () => {
+      nav.classList.toggle("is-scrolled", window.scrollY > 4);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+</script>
