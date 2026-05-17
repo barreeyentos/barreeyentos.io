@@ -1,6 +1,6 @@
 # barreeyentos.io
 
-Personal site for Ashley Negrette — `// make things // do things`.
+Personal site for Alejandro Barrientos — `// make things // do things`.
 
 Built with [Astro](https://astro.build) and deployed to GitHub Pages on the custom domain [barreeyentos.io](https://barreeyentos.io).
 
@@ -29,13 +29,18 @@ Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site
 
 ```
 src/
-├── layouts/Layout.astro       # Page shell (header + main + footer)
-├── components/Header.astro    # Brand bar + nav + optional page title
-├── styles/global.css          # Site-wide styles
+├── layouts/Layout.astro       # Page shell (nav + main + footer + view transitions)
+├── components/
+│   ├── Nav.astro              # Sticky translucent nav with active-route indicator
+│   ├── Footer.astro           # Minimal monospace footer
+│   └── AppCard.astro          # Card used in the apps grid
+├── styles/global.css          # Design tokens (dark + light) and site-wide styles
 └── pages/
-    ├── index.astro            # Home — "// make things // do things"
+    ├── index.astro            # Home — "// make things // do things" hero + selected work
     ├── about.astro            # About page
-    └── apps/day-calculator/
-        ├── index.astro        # Day Calculator description
-        └── privacy.astro      # Day Calculator privacy policy
+    └── apps/
+        ├── index.astro        # Apps listing
+        └── day-calculator/
+            ├── index.astro    # Day Calculator description
+            └── privacy.astro  # Day Calculator privacy policy
 ```
